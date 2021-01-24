@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hang-a84dc": {
+      "hosting": {
+        "HangDashboard": [
+          "hang-a84dc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "Hang": "hang-a84dc"
+  }
+}

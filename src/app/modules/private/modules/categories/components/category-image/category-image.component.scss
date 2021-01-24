@@ -1,0 +1,14 @@
+.image-preview {
+  display: flex;
+  flex-direction: row;
+
+  > * {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+
+}

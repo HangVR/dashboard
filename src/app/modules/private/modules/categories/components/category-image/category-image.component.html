@@ -1,0 +1,15 @@
+<div class="image-preview">
+  <div>
+    <img [src]="category.imageUrl">
+  </div>
+  <div>
+    <ng-container *ngIf="adapter">
+      <ngx-awesome-uploader
+        [adapter]="adapter"
+      >
+      </ngx-awesome-uploader>
+
+    </ng-container>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Create category</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter name of product" formControlName="name" />
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="create()">Create</button>
+</mat-dialog-actions>
+

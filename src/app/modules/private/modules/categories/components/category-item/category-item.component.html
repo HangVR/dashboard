@@ -1,0 +1,17 @@
+<mat-card class="category">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{category.name}}</mat-card-title>
+  </mat-card-header>
+  <div class="image-frame">
+    <img mat-card-image [src]="category.imageUrl">
+  </div>
+
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="[category.id]" >Detail</a>
+    <button mat-raised-button color="warn" (click)="removeClick.emit(category)">Delete</button>
+
+  </mat-card-actions>
+</mat-card>

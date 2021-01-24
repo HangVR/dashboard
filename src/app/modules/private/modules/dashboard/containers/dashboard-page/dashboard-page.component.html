@@ -1,0 +1,6 @@
+<p>dashboard-page works!</p>
+<strong>UID:</strong>: {{(user$ | async)?.uid}}<br />
+<strong>Token:</strong>{{token$ | async}}
+<br />
+
+<button mat-raised-button color="warn" (click)="logout()">Logout</button>

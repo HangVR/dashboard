@@ -1,0 +1,20 @@
+
+<mat-toolbar>
+  <span>Hang - Administration</span>
+  <button mat-button [matMenuTriggerFor]="menu">{{(selectedOrganizations$ | async)?.name}}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let organization of (organizations$ | async)" (click)="select(organization)">{{organization.name}}</button>
+  </mat-menu>
+  <span class="example-spacer"></span>
+  <a mat-button [routerLink]="['/categories']">
+    Categories
+  </a>
+  <button mat-button>
+    Products
+  </button>
+</mat-toolbar>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+

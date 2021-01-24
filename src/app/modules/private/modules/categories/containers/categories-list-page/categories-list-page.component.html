@@ -1,0 +1,7 @@
+
+<a mat-fab color="accent" (click)="showCreateDialog()">
+  <mat-icon>add</mat-icon>
+</a>
+
+<app-category-list [categories]="categories$ | async" (removeClick)="onRemoveClick($event)"></app-category-list>
+
