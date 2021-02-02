@@ -16,9 +16,7 @@ export class LayoutComponent implements OnInit {
   constructor(private organizationService: OrganizationService) {}
 
   ngOnInit(): void {
-    this.organizations$ = this.organizationService
-      .getAll()
-      .pipe(map((response) => response.data));
+    this.organizationService.getAll().pipe(map((response) => response.data));
     this.selectedOrganizations$ = this.organizationService.getSelectedOrganization();
   }
 

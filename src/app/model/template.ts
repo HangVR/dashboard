@@ -1,4 +1,5 @@
-export interface CategoryTemplate {
+export interface Template {
   key: string;
   dataType: 'string' | 'number';
+  label: string;
 }

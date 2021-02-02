@@ -16,9 +16,9 @@ import { CategoryCreateDialogComponent } from './containers/category-create-dial
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoryDetailPageComponent } from './containers/category-detail-page/category-detail-page.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { CategoryDataFormComponent } from './components/category-data-form/category-data-form.component';
 import { FilePickerModule } from 'ngx-awesome-uploader';
-import { CategoryImageComponent } from './components/category-image/category-image.component';
+import { ProductsModule } from '../products/products.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,10 +28,9 @@ import { CategoryImageComponent } from './components/category-image/category-ima
     CategoryEditPageComponent,
     CategoryCreateDialogComponent,
     CategoryDetailPageComponent,
-    CategoryDataFormComponent,
-    CategoryImageComponent,
   ],
   imports: [
+    SharedModule,
     CommonModule,
     ReactiveFormsModule,
     MatCardModule,
@@ -43,6 +42,7 @@ import { CategoryImageComponent } from './components/category-image/category-ima
     MatDialogModule,
     MatTabsModule,
     FilePickerModule,
+    ProductsModule,
   ],
 })
 export class CategoriesModule {}

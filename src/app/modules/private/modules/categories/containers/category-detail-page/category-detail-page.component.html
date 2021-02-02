@@ -1,17 +1,27 @@
-<h1>{{(category$ | async)?.name}}</h1>
-<ng-container *ngIf="category$ | async">
+
+<ng-container *ngIf="(category$ | async) as category">
+  <h1>{{category?.name}}</h1>
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Kategorie">
-      <app-category-list [categories]="(category$ | async)?.childEntities"></app-category-list>
+    <mat-tab label="Categories">
+      <a mat-fab color="accent" (click)="showCreateDialog()">
+        <mat-icon>add</mat-icon>
+      </a>
+      <app-category-list [categories]="category?.children"></app-category-list>
+    </mat-tab>
+    <mat-tab label="Products">
+      <a mat-fab color="accent" (click)="showCreateProductDialog()">
+        <mat-icon>add</mat-icon>
+      </a>
+      <app-product-list [products]="products$ | async" ></app-product-list>
     </mat-tab>
     <mat-tab label="Data">
-      <app-category-data-form [category]="category$ | async"
-                              [categoryTemplate]="categoryTemplate$ | async"
-                              (save)="saveCategory($event)"
-      ></app-category-data-form>
+      <app-custom-data-form [data]="category.customData"
+                              [template]="categoryTemplate$ | async"
+                              (save)="saveCategory(category, $event)"
+      ></app-custom-data-form>
     </mat-tab>
-    <mat-tab label="Obrázek">
-      <app-category-image [category]="category$ | async"></app-category-image>
+    <mat-tab label="Image">
+      <app-image-upload [imageUrl]="category.imageUrl" [adapter]="adapter$ | async"></app-image-upload>
     </mat-tab>
   </mat-tab-group>
 </ng-container>

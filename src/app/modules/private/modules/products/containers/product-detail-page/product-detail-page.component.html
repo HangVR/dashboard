@@ -1,0 +1,17 @@
+<ng-container *ngIf="product$ | async as product">
+  <h1>{{product?.name}}</h1>
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Data">
+      <app-custom-data-form [data]="product.customData"
+                              [template]="productTemplate$ | async"
+                              (save)="saveProduct(product, $event)"
+      ></app-custom-data-form>
+    </mat-tab>
+    <mat-tab label="Image">
+      <app-image-upload [imageUrl]="product.imageUrl" [adapter]="adapter$ | async"></app-image-upload>
+    </mat-tab>
+    <mat-tab label="Model">
+      TODO
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

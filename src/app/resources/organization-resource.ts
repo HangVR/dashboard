@@ -21,10 +21,6 @@ import { Organization } from '../model/organization';
   url: environment.apiUrl,
 })
 export class OrganizationResource extends Resource {
-  constructor(restHandler: ResourceHandler) {
-    super(restHandler);
-  }
-
   @ResourceAction({
     method: ResourceRequestMethod.Get,
   })

@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <mat-form-field *ngFor="let template of categoryTemplate">
-    <mat-label>{{template.key}}</mat-label>
+  <mat-form-field *ngFor="let template of template">
+    <mat-label>{{template.label}}</mat-label>
     <input matInput [formControlName]="template.key">
   </mat-form-field>
   <button type="submit" [disabled]="!form.valid" mat-raised-button color="primary">

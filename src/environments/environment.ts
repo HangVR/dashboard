@@ -6,13 +6,12 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost/api/v1',
   firebase: {
-    apiKey: 'AIzaSyC4iUWK_B00jy6R6bnBGiOVyIuK4w_Qxmw',
-    authDomain: 'merkur-develop.firebaseapp.com',
-    databaseURL: 'https://merkur-develop.firebaseio.com',
-    projectId: 'merkur-develop',
-    storageBucket: 'merkur-develop.appspot.com',
-    messagingSenderId: '932084905620',
-    appId: '1:932084905620:web:8384e0b3d7d2352c19e681',
+    apiKey: 'AIzaSyBWyL0BaZsKjh4w8DXmLI-wmR8g5LDMbNk',
+    authDomain: 'hang---develop.firebaseapp.com',
+    projectId: 'hang---develop',
+    storageBucket: 'hang---develop.appspot.com',
+    messagingSenderId: '753161759391',
+    appId: '1:753161759391:web:6bcf518fa2a723953050aa',
   },
 };
 

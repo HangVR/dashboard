@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { OrganizationResource } from '../resources/organization-resource';
-import { BehaviorSubject, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ResponseData } from '../model/response/response-data';
 import { Organization } from '../model/organization';
 import { filter, map, share, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrganizationService {
-  constructor(private organizationResource: OrganizationResource) {}
+  constructor(
+    private httpClient: HttpClient,
+    private organizationResource: OrganizationResource
+  ) {}
 
   private readonly allOrganizations = this.organizationResource
     .getAll()
@@ -36,7 +41,10 @@ export class OrganizationService {
             this.selectedOrganization.next(organization);
           })
         )
-        .subscribe();
+        .subscribe(
+          () => console.log('OK done'),
+          (error) => console.error(error)
+        );
     }
     return this.selectedOrganization.asObservable();
   }

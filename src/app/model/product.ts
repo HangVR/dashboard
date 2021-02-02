@@ -1,7 +1,6 @@
-export interface Category {
+export interface Product {
   id: string;
   name: string;
   imageUrl: string;
-  children: Category[];
   customData: any;
 }

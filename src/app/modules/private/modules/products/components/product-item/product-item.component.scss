@@ -1,0 +1,27 @@
+:host {
+  width: 20vw;
+}
+
+.category {
+  max-width: 300px;
+  margin: 10px;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.image-frame {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-height: 100%;
+    width: auto;
+  }
+}

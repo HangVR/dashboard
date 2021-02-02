@@ -52,8 +52,6 @@ export class CategoryService {
     const categoryData = {
       ...category,
       customData: {},
-      parent: null,
-      imageUrl: 'test',
     };
     return this.organizationService.getSelectedOrganizationId().pipe(
       switchMap((id) =>

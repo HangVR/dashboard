@@ -16,10 +16,10 @@ import { Template } from '../model/template';
 })
 @ResourceParams({
   // IResourceParams
-  pathPrefix: '/organizations/{!organizationId}/categories/templates',
+  pathPrefix: '/organizations/{!organizationId}/products/templates',
   url: environment.apiUrl,
 })
-export class CategoryTemplateResource extends Resource {
+export class ProductTemplateResource extends Resource {
   constructor(restHandler: ResourceHandler) {
     super(restHandler);
   }

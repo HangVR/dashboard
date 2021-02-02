@@ -1,20 +1,20 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CategoryService } from '../../../../../../services/category.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ProductService } from '../../../../../../services/product.service';
 
 @Component({
-  selector: 'app-category-create-dialog',
-  templateUrl: './category-create-dialog.component.html',
-  styleUrls: ['./category-create-dialog.component.scss'],
+  selector: 'app-product-create-dialog',
+  templateUrl: './product-create-dialog.component.html',
+  styleUrls: ['./product-create-dialog.component.scss'],
 })
-export class CategoryCreateDialogComponent implements OnInit {
+export class ProductCreateDialogComponent implements OnInit {
   form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private categoryService: CategoryService,
-    private dialogRef: MatDialogRef<CategoryCreateDialogComponent>,
+    private productService: ProductService,
+    private dialogRef: MatDialogRef<ProductCreateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { categoryId: string }
   ) {}
 
@@ -30,8 +30,8 @@ export class CategoryCreateDialogComponent implements OnInit {
 
   create(): void {
     if (this.form.valid) {
-      this.categoryService
-        .create({ ...this.form.value, parent: this.data?.categoryId })
+      this.productService
+        .create({ ...this.form.value, category: this.data.categoryId })
         .subscribe(() => this.dialogRef.close());
     }
   }
